@@ -13,7 +13,7 @@ Split / move windows
                       Left, Right      Top, Bottom
                       
 # Usage
-    xwinsplitter WINDOW_ID QUANDRANT
+    xwinsplitter <WINDOW_ID> <QUANDRANT> [MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM]
     
     # Move window(0x01200001) to quandrant 5.
     xwinsplitter 0x01200001 5
