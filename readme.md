@@ -13,11 +13,16 @@ Split / move windows
                       Left, Right      Top, Bottom
                       
 # Usage
-    xwinsplitter <WINDOW_ID> <QUANDRANT> [MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM]
+    xwinsplitter.sh <WINDOW_ID> <QUANDRANT> [MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM]
     
     # Move window(0x01200001) to quandrant 5.
-    xwinsplitter 0x01200001 5
+    xwinsplitter.sh 0x01200001 5
 
     # Resize window(0x01200001) to the full right quandrant.
-    xwinsplitter 0x01200001 right
+    xwinsplitter.sh 0x01200001 right
     
+    # Get active window ID
+    xwinsplitter--id.sh :active:
+    
+    # Get window ID with title 'Terminal'
+    xwinsplitter--id.sh Terminal
