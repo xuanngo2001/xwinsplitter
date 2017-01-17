@@ -5,22 +5,28 @@ WIN_ID=$1
 QUADRANT=$(echo $2 | tr '[:upper:]' '[:lower:]')
 MARGIN=$3
 
-if [ $# -eq  2 ]; then
+if [ $# -eq 2 ]; then
   MARGIN_LEFT=0
   MARGIN_TOP=0
   MARGIN_RIGHT=0
   MARGIN_BOTTOM=0
 else
-  MARGIN_LEFT=$(echo "${MARGIN}" | cut -d',' -f1)
-  MARGIN_TOP=$(echo "${MARGIN}" | cut -d',' -f2)
-  MARGIN_RIGHT=$(echo "${MARGIN}" | cut -d',' -f3)
-  MARGIN_BOTTOM=$(echo "${MARGIN}" | cut -d',' -f4)
-  
-  IS_NUMBER_RE='^[0-9]+$'
-  if ! [[ "${MARGIN_LEFT}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_LEFT} is not a number. Aborted!"; exit 1; fi
-  if ! [[ "${MARGIN_TOP}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_TOP} is not a number. Aborted!"; exit 1; fi
-  if ! [[ "${MARGIN_RIGHT}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_RIGHT} is not a number. Aborted!"; exit 1; fi
-  if ! [[ "${MARGIN_BOTTOM}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_BOTTOM} is not a number. Aborted!"; exit 1; fi
+
+  if [ $# -eq 3 ]; then
+    MARGIN_LEFT=$(echo "${MARGIN}" | cut -d',' -f1)
+    MARGIN_TOP=$(echo "${MARGIN}" | cut -d',' -f2)
+    MARGIN_RIGHT=$(echo "${MARGIN}" | cut -d',' -f3)
+    MARGIN_BOTTOM=$(echo "${MARGIN}" | cut -d',' -f4)
+    
+    IS_NUMBER_RE='^[0-9]+$'
+    if ! [[ "${MARGIN_LEFT}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_LEFT} is not a number. Aborted!"; exit 1; fi
+    if ! [[ "${MARGIN_TOP}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_TOP} is not a number. Aborted!"; exit 1; fi
+    if ! [[ "${MARGIN_RIGHT}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_RIGHT} is not a number. Aborted!"; exit 1; fi
+    if ! [[ "${MARGIN_BOTTOM}" =~ ${IS_NUMBER_RE} ]] ; then echo "Error: ${MARGIN_BOTTOM} is not a number. Aborted!"; exit 1; fi
+  else
+    echo "Error: Invalid arguments. Aborted!"
+    exit 1
+  fi
 fi
 
 echo -e "\tMARGIN (L, T, R, B): $MARGIN_LEFT, $MARGIN_TOP, $MARGIN_RIGHT, $MARGIN_BOTTOM "
