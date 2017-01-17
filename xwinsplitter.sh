@@ -40,7 +40,7 @@ echo "Target Window(W x H): ${WIN_WIDTH} x ${WIN_HEIGHT}"
 echo "WIN_DECORATION(left, right, top, bottom): ${WIN_DECORATION}"
 
 VIEW_WIDTH=$(( $SCREEN_WIDTH - $MARGIN_LEFT - $MARGIN_RIGHT ))
-VIEW_HEIGHT=$(( $SCREEN_HEIGHT - $MARGIN_TOP - $MARGIN_BOTTOM - $WIN_DECORATION_TOP - $WIN_DECORATION_BOTTOM ))
+VIEW_HEIGHT=$(( $SCREEN_HEIGHT - $MARGIN_TOP - $MARGIN_BOTTOM ))
 
 ### Move window to the corresponding section of the screen.
 case "${QUADRANT}" in
