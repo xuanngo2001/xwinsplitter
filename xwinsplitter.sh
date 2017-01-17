@@ -33,10 +33,10 @@ SCREEN_HEIGHT=$(xwininfo -root | awk '$1=="Height:" {print $2}')
 #WIN_ID=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) # OR: xprop -root _NET_ACTIVE_WINDOW
 # xprop lists the sizes in this order: left, right, top, bottom
 WIN_DECORATION=$(xprop -id ${WIN_ID} | grep FRAME_EXTENTS )
-WIN_DECORATION_LEFT=$(echo -e "\t${WIN_DECORATION}" | cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 1)
-WIN_DECORATION_RIGHT=$(echo -e "\t${WIN_DECORATION}"| cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 2)
-WIN_DECORATION_TOP=$(echo -e "\t${WIN_DECORATION}" | cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 3)
-WIN_DECORATION_BOTTOM=$(echo -e "\t${WIN_DECORATION}"| cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 4)
+WIN_DECORATION_LEFT=$(echo "${WIN_DECORATION}" | cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 1)
+WIN_DECORATION_RIGHT=$(echo "${WIN_DECORATION}"| cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 2)
+WIN_DECORATION_TOP=$(echo "${WIN_DECORATION}" | cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 3)
+WIN_DECORATION_BOTTOM=$(echo "${WIN_DECORATION}"| cut -d '=' -f 2 | tr -d ' ' | cut -d ',' -f 4)
 
 
 ### Get active window dimensions
