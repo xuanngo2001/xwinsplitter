@@ -75,6 +75,69 @@ case "${QUADRANT}" in
     H=$(( $VIEW_HEIGHT ))
     ;;
     
+  7)
+    X=0
+    Y=0
+    W=-1
+    H=-1
+    ;;
+
+  8)
+    X=$(( $VIEW_WIDTH/2 - $WIN_WIDTH/2 ))
+    Y=0
+    W=-1
+    H=-1
+    ;;
+
+  9)
+    X=$(( $VIEW_WIDTH - $WIN_WIDTH ))
+    Y=0
+    W=-1
+    H=-1
+    ;;
+
+  4)
+    X=0
+    Y=$(( $VIEW_HEIGHT/2 - $WIN_HEIGHT/2 ))
+    W=-1
+    H=-1
+    ;;
+
+  5)
+    X=$(( $VIEW_WIDTH/2 - $WIN_WIDTH/2 ))
+    Y=$(( $VIEW_HEIGHT/2 - $WIN_HEIGHT/2 ))
+    W=-1
+    H=-1
+    ;;
+
+  6)
+    X=$(( $VIEW_WIDTH - $WIN_WIDTH ))
+    Y=$(( $VIEW_HEIGHT/2 - $WIN_HEIGHT/2 ))
+    W=-1
+    H=-1
+    ;;
+
+  1)
+    X=0
+    Y=$(( $VIEW_HEIGHT - $WIN_HEIGHT ))
+    W=-1
+    H=-1
+    ;;
+
+  2)
+    X=$(( $VIEW_WIDTH/2 - $WIN_WIDTH/2 ))
+    Y=$(( $VIEW_HEIGHT - $WIN_HEIGHT ))
+    W=-1
+    H=-1
+    ;;
+
+  3)
+    X=$(( $VIEW_WIDTH - $WIN_WIDTH ))
+    Y=$(( $VIEW_HEIGHT - $WIN_HEIGHT ))
+    W=-1
+    H=-1
+    ;;
+
   *)
     echo "ERROR: Please provide section input(i.e. left, right, top or bottom)"
     echo "   e.g. $@"
