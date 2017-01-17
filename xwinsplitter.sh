@@ -150,9 +150,9 @@ case "${QUADRANT}" in
     ;;
 
   *)
-    echo -e "\tERROR: Please provide section input(i.e. left, right, top or bottom)"
-    echo -e "\t   e.g. $@"
-    echo -e "\t   e.g. $0 right"
+    echo "ERROR: Please provide section input(i.e. left, right, top or bottom)"
+    echo "   e.g. $@"
+    echo "   e.g. $0 right"
     exit 1
     ;;
 esac
