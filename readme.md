@@ -26,3 +26,6 @@ Split / move windows
     
     # Get window ID with title 'Terminal'
     xwinsplitter--id.sh Terminal
+
+# Resource
+`xev` will show on clicked UI.    
