@@ -13,12 +13,12 @@ Split / move windows
                       Left, Right      Top, Bottom
                       
 # Usage
-    xwinsplitter.sh <WINDOW_ID> <QUANDRANT> [MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM]
+    xwinsplitter.sh <WINDOW_ID> <QUADRANT> [MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM]
     
-    # Move window(0x01200001) to quandrant 5.
+    # Move window(0x01200001) to quadrant 5.
     xwinsplitter.sh 0x01200001 5
 
-    # Resize window(0x01200001) to the full right quandrant.
+    # Resize window(0x01200001) to the full right quadrant.
     xwinsplitter.sh 0x01200001 right
     
     # Get active window ID
